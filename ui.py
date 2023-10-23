@@ -1,4 +1,4 @@
-from logger import input_data,print_data
+from logger import input_data,print_data,delete_data
 
 def interface ():
     print ("Добрый день! Это бот-помощник. \n"
@@ -13,4 +13,6 @@ def interface ():
         input_data ()
     elif command==2:
         print_data ()
+    elif command==3:
+        delete_data ()
 

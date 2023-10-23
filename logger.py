@@ -37,3 +37,28 @@ def print_data ():
         for i in data:
             if i !="\n":
              print (i, end="")
+def delete_data ():
+    lines=[]
+    with open ("data_second_variant.csv","r", encoding= "utf-8") as file:
+        data = file.radlines()
+        count = 0
+        for i in data:
+            if i.strip():
+                count +=1
+                print (str(count) + '.'+ i,end="")
+                lines.append(i)
+            else:
+                print (i, end="")
+    var = int (input(f'\n Какую запись удалить?\n'
+                     f'\n Ваш выбор:'))
+    while var <1 or var > count:
+        var= int (input ("Ошибка!Ваш выбор:"))
+    with open ("data_second_variant.csv","w", encoding= "utf-8") as file:
+        currentlineIndex=0
+        for line in lines:
+            currentlineIndex +=1
+            if currentlineIndex !=var:
+                file.write(line)
+                file.write("\n")
+                    
+
